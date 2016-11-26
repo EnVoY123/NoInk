@@ -10,3 +10,17 @@
 .selected-card-default{
     border: 1px solid red;
 }
+
+.card_title{
+  color: white;
+}
+
+.setting-btn{
+  color: white;
+}
+
+.credit_card{
+  display: inline-block;
+  margin-top: 30px;
+}
+

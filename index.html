@@ -60,6 +60,15 @@
             <div class="right"></div>
           </div>
         </div>
+         <div class="navbar-inner cached" data-page="defaultPage">
+            <div class="right">
+              <a href="index" class="link back">
+                <i class="fa fa-cog fa-2x setting-btn" aria-hidden="true"></i>
+              </a>
+            </div>
+            <div class="center sliding card_title">Cards</div>
+            <div class="right"></div>
+          </div>
         
         <!-- Pages -->
         <div class="pages navbar-through toolbar-through with-margin-top">
@@ -89,12 +98,11 @@
             <div class="page-content" ng-model="card">
                 <input class="selected-card" type="text" readonly value="Default card: " />
                 <input class="selected-card" type="text" readonly value="{{card.number}} 11111111111 " />
-                <h2 class="center">Menu</h2>
-                <a href="#transactionsPage"> <img ng-class="" src="images/cards/1453186886483.jpg" /> </a>
-                <br />
-                <a href="#transactionsPage"> <img ng-class="" src="images/cards/contactless-card.png" /> </a>
-                <br />
-                <i class="fa fa-cog fa-4x" aria-hidden="true"></i>
+                <div class="card_list text-center">
+                  <a href="#transactionsPage" class="credit_card"> <img ng-class="" src="images/cards/1453186886483.jpg" /> </a>
+                  <br />
+                  <a href="#transactionsPage" class="credit_card"> <img ng-class="" src="images/cards/contactless-card.png" /> </a>
+                </div>
             </div>
           </div>
 
