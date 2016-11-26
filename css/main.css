@@ -1,1 +1,9 @@
 /* Add custom styles here */
+
+.page{
+    margin-top: 10px;
+}
+
+.with-margin{
+     margin-top: 10px;
+}
