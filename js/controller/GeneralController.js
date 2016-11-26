@@ -15,4 +15,8 @@ MyApp.angular.controller('GeneralController', ['$scope', '$http', 'InitService',
     // MyApp.fw7.app
   });
   
+  function activatePaymentTimeout() {
+       angular.element('#pay').triggerHandler('click');          
+  }
+
 }]);

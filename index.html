@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="css/defaultPage.css">
     <link rel="stylesheet" href="css/passcode.css">
     <link rel="stylesheet" href="css/paymentAccepted.css">
+    <link rel="stylesheet" href="css/payment.css">
 
 
     <!-- Scripts -->
@@ -113,12 +114,37 @@
             <div data-page="payPage" class="page cached" ng-controller="GeneralController">
                 <!-- Page content-->
                 <div class="page-content">
-                    This where you pay  
-                    
-                    selected card number and <a href="#selectCardPage">change card button </a>
-                    <br />
-                   <a href="#paymentAcceptedPage">Pay</a>
-                </div>
+                  
+                    <p class="large-text header-text" ng-click="setTimeout(activatePaymentTimeout, 3000);">
+                        Selected card:
+                    </p>
+                  <input class="selected-card col-md-10" type="text" readonly value="VISA  ...1234" /> <a class="button-right col-md-2" href="#selectCardPage"><input type="button" value="Change card" class="btn btn-secondary" /> </a>
+                                         
+                        <div id="circle">
+                            <div class="circle one">
+                                <div class="circle two">
+                                    <div class="circle three">
+                                        <div class="circle four">
+                                            <div class="circle five">
+                                                <div class="circle six">
+                                                    <div class="circle seven">
+                                                        <div class="circle eight">
+                                                            <div class="circle nine">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    <a id="pay" class="" href="#paymentAcceptedPage"><input type="button" class="btn text-center pay" value="Pay"/></a> 
+
+
+</div>
             </div>
             <!-- Page 4 -->
             <div data-page="paymentAcceptedPage" class="page cached" ng-controller="GeneralController">
