@@ -10,3 +10,22 @@
 .navbar{
   background: #0E323F;
 }
+.navy-color{
+    color: #0E323F;
+}
+#content {
+    margin-bottom: 20px;
+    height: 100%;
+	padding-bottom:50px; /* Height of the footer element */
+}
+.left-position{
+    float:left;
+}
+.right-position{
+    float: right;
+}
+#footer {
+	/*text-align:center;*/
+	width:100%;
+	bottom:0;
+}

@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="css/passcode.css">
     <link rel="stylesheet" href="css/paymentAccepted.css">
     <link rel="stylesheet" href="css/payment.css">
+    <link rel="stylesheet" href="css/receipt.css">
 
 
     <!-- Scripts -->
@@ -164,20 +165,33 @@
             <!-- Page 5 -->
             <div data-page="receiptPage" class="page cached" ng-controller="GeneralController">
                 <!-- Page content-->
-                <div class="page-content">
-                    Receipt picture 
-                    <a href="#defaultPage"> trash button </a>
-                    <a href="#defaultPage"> ok </a>
-                        ... button pop-up
-</div>
+                <div id="content" class="page-content">
+                    <i class="fa fa-ellipsis-h fa-3x navy-color text-right top-button" aria-hidden="true"></i>
+                    <div class="text-center">
+                      <img src="images/receipts/acme.jpg" />
+                    
+                   </div>
+                    <div id="footer" >
+                        <div class="footer-button-left">
+                            <a class="left-position" href="#defaultPage"> <i class="fa fa-trash-o fa-3x navy-color" aria-hidden="true"></i> </a>
+                        </div>
+                        
+                        <div class="footer-button-right">
+                            <a class="right-position" href="#defaultPage"><input type="button" class="btn btn-success" value="OK" /> </a>
+                        </div>
+                    </div>
+                 </div>
             </div>
             <!-- Page 6 -->
             <div data-page="selectCardPage" class="page cached" ng-controller="GeneralController">
                 <!-- Page content-->
-                <div class="page-content">
-                    Choose card to pay page with 
-                    <a href="#payPage"> card pictures </a>
-</div>
+                 <div class="page-content">
+                        <div class="card_list text-center">
+                            <a href="#payPage" class="credit_card"> <img ng-class="" src="images/cards/1453186886483.jpg" /> </a>
+                            <a href="#payPage" class="credit_card"> <img ng-class="" src="images/cards/contactless-card.png" /> </a>
+                        </div>
+                    </div>
+                </div>
             </div>
             <!-- Page 2 -->
             <div data-page="transactionsPage" class="page cached" ng-controller="TransactionsPageController">
