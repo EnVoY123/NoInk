@@ -1,0 +1,12 @@
+﻿
+.selected-card{
+    
+    flex:auto;
+    background-color: transparent;
+    border: none;
+    
+}
+
+.selected-card-default{
+    border: 1px solid red;
+}
