@@ -1,0 +1,13 @@
+﻿.top-button{
+    width:100%;
+}
+.footer-button-right{
+       float:right;
+       margin-right: 25px;
+       margin-top: 25px;
+}
+.footer-button-left{
+    margin-left: 25px;
+    float: left;
+    margin-top: 20px;
+}
