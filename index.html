@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="css/paymentAccepted.css">
     <link rel="stylesheet" href="css/payment.css">
     <link rel="stylesheet" href="css/receipt.css">
+    <link rel="stylesheet" href="css/transaction_page.css">
 
 
     <!-- Scripts -->
@@ -32,18 +33,19 @@
     <script type="text/javascript" src="js/controller/GeneralController.js"></script>
     <script type="text/javascript" src="js/controller/TransactionsPageController.js"></script>
     <script type="text/javascript" src="js/passcode.js"></script>
+    <script type="text/javascript" src="js/service/SharedScopes.js"></script>
+    <script type="text/javascript" src="js/popup.js"></script>
+
 
       <!-- Latest compiled and minified CSS -->
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-      <!-- Optional theme -->
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-
       <!-- Latest compiled and minified JavaScript -->
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+      <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
 
 
-  </head>
+  </head
+  >
   <body>
     <div class="statusbar-overlay"></div>
     <div class="panel-overlay"></div>
@@ -66,35 +68,63 @@
             <div class="right"></div>
           </div>
         </div>
-         <div class="navbar-inner cached" data-page="defaultPage">
-            <div class="right">
-              <a href="index" class="link back">
-                <i class="fa fa-cog fa-2x setting-btn" aria-hidden="true"></i>
-              </a>
-            </div>
-            <div class="center sliding card_title">Cards</div>
-            <div class="right"></div>
+        <div class="navbar-inner cached" data-page="defaultPage">
+          <div class="right">
+            <a href="index" class="link back">
+              <i class="fa fa-cog fa-1x setting-btn" aria-hidden="true"></i>
+            </a>
           </div>
+          <div class="center sliding card_title">Your Cards</div>
+          <div class="right"></div>
+        </div>
+
+        <div class="navbar-inner cached" data-page="payPage">
+          <div class="right">
+            <a href="index" class="link back">
+              <i class="fa fa-cog fa-1x setting-btn" aria-hidden="true"></i>
+            </a>
+          </div>
+          <div class="center sliding card_title">Payment</div>
+          <div class="right"></div>
+        </div>
+
+          
+        <div class="navbar-inner cached" data-page="transactionsPage">
+          <div class="center sliding card_title">Transaction</div>
+          <div class="right"></div>
+        </div>
         
         <!-- Pages -->
         <div class="pages navbar-through toolbar-through with-margin-top">
+
+
+
+          <div class="popup popup-about">
+            <div class="content-block">
+              <p>About</p>
+              <p><a href="#" class="close-popup">Close popup</a></p>
+              <p>Lorem ipsum dolor ...</p>
+            </div>
+          </div>
           
           <!-- Page 1 -->
           <div data-page="index" class="page " ng-controller="IndexPageController">
             <!-- Page content-->
             <div class="page-content center">
-                <div class="text-center">
-                  <h4 class="">Passcode</h4>
-                  <form>
-                    <input type="text" pattern="\d*" maxlength="1" class="password_input" onKeyUp="nextField(this, 'n2', 1)"></input>
-                    <input type="text" name="n2" pattern="\d*" maxlength="1" class="password_input" onKeyUp="nextField(this, 'n3', 1)"></input>
-                    <input type="text" name="n3" pattern="\d*" maxlength="1" class="password_input" onKeyUp="nextField(this, 'n4', 1)"></input>
-                    <input type="text" name="n4" pattern="\d*" maxlength="1" class="password_input"  onKeyUp="document.getElementById('passcode_next_btn').click();;"></input>
-                  </form>
-                </div>
-                <div class="text-right passcode_next_btn">
-                  <a hidden id="passcode_next_btn" href="#payPage">NEXT </a>             
-                </div>
+              <div class="text-center passcode_area">
+                <img src="./images/passcodes/avatar_circle.png" class="avatar"/>
+                <h4 class="password_name">Kasimir Kaitue</h4>
+                <p class="password_input_label">Type Your Password<p>
+                <form>
+                  <input type="text" pattern="\d*" maxlength="1" class="password_input" onKeyUp="nextField(this, 'n2', 1)" class="passcode_input"></input>
+                  <input type="text" name="n2" pattern="\d*" maxlength="1" class="password_input" onKeyUp="nextField(this, 'n3', 1)" class="passcode_input"></input>
+                  <input type="text" name="n3" pattern="\d*" maxlength="1" class="password_input" onKeyUp="nextField(this, 'n4', 1)" class="passcode_input"></input>
+                  <input type="text" name="n4" pattern="\d*" maxlength="1" class="password_input"  onKeyUp="nextPage(this)" class="passcode_input"></input>
+                </form>
+              </div>
+              <div class="text-right passcode_next_btn">
+                <a hidden id="passcode_next_btn" href="#payPage">NEXT </a>             
+              </div>
             </div>
           </div>
 
@@ -102,39 +132,38 @@
           <div data-page="defaultPage" class="page cached" ng-controller="DetailPageController">
             <!-- Page content-->
             <div class="page-content" ng-model="card">
-                <input class="selected-card" type="text" readonly value="Default card: " />
-                <input class="selected-card" type="text" readonly value="{{card.number}} 11111111111 " />
                 <div class="card_list text-center">
-                  <a href="#transactionsPage" class="credit_card"> <img ng-class="" src="images/cards/1453186886483.jpg" /> </a>
-                  <br />
-                  <a href="#transactionsPage" class="credit_card"> <img ng-class="" src="images/cards/contactless-card.png" /> </a>
+                  <a href="#transactionsPage" class="credit_card"> <img src="images/cards/1453186886483.jpg" /> </a>
+                  <a href="#transactionsPage" class="credit_card"> <img  src="images/cards/contactless-card.png" /> </a>
                 </div>
             </div>
           </div>
 
 
             <!-- Page 3 -->
-            <div data-page="payPage" class="page cached" ng-controller="GeneralController">
-                <!-- Page content-->
-                <div class="page-content">
-                  
-                    <p class="large-text header-text" ng-click="setTimeout(activatePaymentTimeout, 3000);">
-                        Selected card:
-                    </p>
-                  <input class="selected-card col-md-10" type="text" readonly value="VISA  ...1234" /> <a class="button-right col-md-2" href="#selectCardPage"><input type="button" value="Change card" class="btn btn-secondary" /> </a>
-                                         
-                        <div id="circle">
-                            <div class="circle one">
-                                <div class="circle two">
-                                    <div class="circle three">
-                                        <div class="circle four">
-                                            <div class="circle five">
-                                                <div class="circle six">
-                                                    <div class="circle seven">
-                                                        <div class="circle eight">
-                                                            <div class="circle nine">
-                                                            </div>
-                                                        </div>
+          <div data-page="payPage" class="page cached" ng-controller="GeneralController">
+              <!-- Page content-->
+            <div class="page-content">
+              <div class="selected_card_area">
+                <!--<p class="header-text selected-card-title" ng-click="setTimeout(activatePaymentTimeout, 3000);">
+                  Selected card:
+                </p> -->
+                <p class="selected-card_number"> VISA  **** **** **** 1234 </p>
+                <a class="button-right col-md-2" href="#selectCardPage">
+                  Change
+                </a>
+              </div>
+              <div class="payment_area">
+                <div id="circle">
+                    <div class="circle one">
+                        <div class="circle two">
+                            <div class="circle three">
+                                <div class="circle four">
+                                    <div class="circle five">
+                                        <div class="circle six">
+                                            <div class="circle seven">
+                                                <div class="circle eight">
+                                                    <div class="circle nine">
                                                     </div>
                                                 </div>
                                             </div>
@@ -143,23 +172,26 @@
                                 </div>
                             </div>
                         </div>
-
-                    <a id="pay" class="" href="#paymentAcceptedPage"><input type="button" class="btn text-center pay" value="Pay"/></a> 
-
-
-</div>
+                    </div>
+                </div>
+                <div class="payment_btn text-center">
+                  <a id="pay" class="" href="#paymentAcceptedPage"><input type="button" class="btn text-center pay" value="Pay"/></a> 
+                </div>
+              </div>
             </div>
+
+          </div>
             <!-- Page 4 -->
             <div data-page="paymentAcceptedPage" class="page cached" ng-controller="GeneralController">
                 <!-- Page content-->
                 <div class="page-content text-center">
-                    <div class="container">
-                        <p class="large-text">Payment accepted</p>
+                    <div class="container payment_completion_area">
+                        <p class="large-text accepted_text">Payment accepted</p>
                         <div class="button-container">
-                            <p class="large-text"> Do you want a receipt?</p>
+                            <p class="large-text receive_receipt"> Do you want a receipt?</p>
 
-                            <a class="col-md-6" href="#defaultPage"> <input class="btn btn-danger" type="button" value="No" /> </a>
-                            <a class="col-md-6" href="#receiptPage"> <input type="button" class="btn btn-success" value="Yes"> </a>
+                            <a class="col-md-6" href="#defaultPage"> <input class="btn btn-no" type="button" value="No" /> </a>
+                            <a class="col-md-6" href="#constReceiptPage"> <input type="button" class="btn btn-yes" value="Yes"> </a>
                         </div>
                     </div>
                 </div>
@@ -168,18 +200,16 @@
             <div data-page="receiptPage" class="page cached" ng-controller="GeneralController">
                 <!-- Page content-->
                 <div id="content" class="page-content">
-                    <i class="fa fa-ellipsis-h fa-3x navy-color text-right top-button" aria-hidden="true"></i>
-                    <div class="text-center">
-                      <img src="images/receipts/acme.jpg" />
-                    
-                   </div>
+                  <!--<i class="fa fa-ellipsis-h fa-3x navy-color text-right top-button" aria-hidden="true"></i>-->
+                    <div class="text-center " id="receipt_image_area">
+                    </div>
                     <div id="footer" >
                         <div class="footer-button-left">
                             <a class="left-position" href="#defaultPage"> <i class="fa fa-trash-o fa-3x navy-color" aria-hidden="true"></i> </a>
                         </div>
                         
                         <div class="footer-button-right">
-                            <a class="right-position" href="#defaultPage"><input type="button" class="btn btn-success" value="OK" /> </a>
+                            <a class="right-position" href="#defaultPage"><input type="button" class="btn btn-yes" value="OK" /> </a>
                         </div>
                     </div>
                  </div>
@@ -192,33 +222,60 @@
                             <a href="#payPage" class="credit_card"> <img ng-class="" src="images/cards/1453186886483.jpg" /> </a>
                             <a href="#payPage" class="credit_card"> <img ng-class="" src="images/cards/contactless-card.png" /> </a>
                         </div>
+                 </div>
+            </div>
+            <div data-page="transactionsPage" class="page cached" ng-controller="TransactionsPageController">
+              <!-- Page content-->
+              <div class="page-content">
+                <div class="list-block media-list">
+                  <div class="sort_popup">
+                    <p><a href="#" data-popup=".popup-about" class="open-popup popup-btn_sort">Sort Your Transaction</a></p>
+                  </div>
+                  <ul>
+                    <li ng-repeat="transaction in transactions">
+                      <a class="transaction_list" href="#receiptPage" ng-click="fetchReceipt(transaction.card_id, transaction.id)">
+                        <div class="item-content">
+                            <div class="item-inner">
+                              <div class="item-title-row">
+                                  <div class="item-title"><span class="transaction-date">{{ transaction.created_at.split("T")[0] }}</span></div>
+                                  <div class="item-after">{{transaction.sum}}€</div>
+                              </div>
+                              <div class="item-subtitle"><span class="transaction-company">{{transaction.company}}</span></div>
+                            </div>
+                        </div>
+                      </a>
+                    </li>
+                  </ul>
+                </div>  
+              </div>
+            </div>
+
+
+            <div data-page="constReceiptPage" class="page cached" ng-controller="GeneralController">
+                  <!-- Page content-->
+              <div id="content" class="page-content">
+                <div class="text-center const_receipt_image_area">
+                  <img src="./images/receipts/acme.jpg">
+                </div>
+                <div id="footer" >
+                    <div class="footer-button-left">
+                       <a class="left-position" href="#defaultPage"> <i class="fa fa-trash-o fa-3x navy-color" aria-hidden="true"></i> </a>
+                    </div>
+                    
+                    <div class="footer-button-right">
+                        <a class="right-position" href="#defaultPage"><input type="button" class="btn btn-yes" value="OK" /> </a>
                     </div>
                 </div>
-            </div>
-            <!-- Page 2 -->
-            <div data-page="transactionsPage" class="page cached" ng-controller="TransactionsPageController">
-                <!-- Page content-->
-                <div class="page-content">
-                  <div class="list-block media-list">
-                      <ul>
-                          <li ng-repeat="transaction in transactions">
-                              <div class="item-content">
-                                  <div class="item-inner">
-                                      <div class="item-title-row">
-                                        <div class="item-title">{{ transaction.created_at.split("T")[0] }}</div>
-                                        <div class="item-after">{{transaction.sum}}€</div>
-                                      </div>
-                                      <div class="item-subtitle">{{transaction.company}}</div>
-                                  </div>
-                              </div>
-                          </li>
-                      </ul>
-                  </div>  
-                    <a href="#receiptPage">transcation row</a>
-
-                </div>
+              </div>
             </div>
         </div>
+    </div>
+
+    <div class="popup popup-about">
+      <div class="content-block">
+          <p>About</p>
+          <p><a href="#" class="close-popup">Close popup</a></p>
+          <p>Lorem ipsum dolor ...</p>
       </div>
     </div>
   </body>

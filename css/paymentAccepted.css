@@ -5,8 +5,43 @@
 .button-container{
     margin-top: 32px;
 }
-.container{
-   
-   margin-top: 50px;
-   margin-bottom: 50px;
+
+
+.payment_completion_area{
+  margin-top: 50px;
+  margin-bottom: 50px;
+  background: white;
+  height: 450px;
+  margin: 30px auto;
+  width: 300px;
+  padding-top: 40px;
+  border: 1px solid #C0C0C0;
+
+}
+
+.receive_receipt{
+  color: #0E323F;
+}
+
+.accepted_text{
+  color: #0E323F;
+}
+
+.btn-no{
+  background: #72240E;
+  border-color: #72240E;
+  color: white;
+  font-weight: 900;
+  width: 70px;
+}
+.btn-yes{
+  color: white;
+  background: #1F6F8B;
+  border-color: #1F6F8B;
+  width: 70px;
+}
+
+.password_input_label{
+  color: #808080;
+  
 }

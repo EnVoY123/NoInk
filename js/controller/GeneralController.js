@@ -1,9 +1,15 @@
 /*jslint browser: true*/
 /*global console, MyApp*/
 
-MyApp.angular.controller('GeneralController', ['$scope', '$http', 'InitService', function ($scope, $http, InitService) {
+MyApp.angular.controller('GeneralController', ['$scope', '$http', 'InitService', 'SharedScopes', function ($scope, $http, InitService, SharedScopes) {
   'use strict';
   
+  console.log(SharedScopes)
+  SharedScopes.setScope('GeneralController', $scope);
+  $scope.fetchReceiptData = function(){
+      $scope.receipt = SharedScopes.getScope("TransactionsPageController").receipt
+      $("#receipt_image_area").append("<img  class='receipt_image' src=" + $scope.receipt + " />" )
+  }
   InitService.addEventListener('ready', function () {
     // DOM ready
   //  console.log('DetailPageController: ok, DOM ready');

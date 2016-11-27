@@ -1,21 +1,50 @@
-﻿body{
-background: url(http://fr4phcore.tk/proyecto/imagenes/fondo.jpg);
+﻿.selected-card_number{
+  display: inline-block;
+  padding-left: 0px;
+  margin-bottom: 4px;
+  margin-left: 70px;
+  font-size: 14px;
+}
+.selected_card_area{
+  margin-top: 15px;
+  background: white;
+   -webkit-box-shadow: 0 6px 4px -4px #777;
+       -moz-box-shadow: 0 6px 4px -4px #777;
+            box-shadow: 0 6px 4px -4px #777;
+}
+.selected-card-title{
+  margin-bottom: 4px;
+  display:  inline-block;
+  margin-top: 15px;
+  margin-bottom: 0px;
 }
 
 .header-text{
     margin-left:15px;
 }
 .pay{
-    
+    background: #0E323F;
+    color: white;
     bottom: 0;
     top: 100px;
+    width: 150px;
 
 }
 .button-right{
-    float: right;
+  display: inline-block;
+  background:  #0E323F;
+  color: white;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  margin-left: 55px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.payment_area{
+  position: relative;
 }
 #circle {
-	position:absolute;
+  height: 140px;
 	left:0;
 	right:0;
 	margin:60px auto;
@@ -31,7 +60,8 @@ background: url(http://fr4phcore.tk/proyecto/imagenes/fondo.jpg);
 	animation: left 2s linear infinite;
 }
 	
-.one {width:288px;
+.one {
+  
 			height:288px;
 			-webkit-animation-delay:1s;
 	}
@@ -92,4 +122,8 @@ animation-delay:.1s;}
 	@keyframes left{
 	0% { border-top: 8px solid rgba(0,0,0,0.1);}
 	100% {border-top: 8px solid #00b7f2;}
+}
+
+.payment_btn{
+  
 }

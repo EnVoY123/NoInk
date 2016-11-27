@@ -8,3 +8,27 @@
   margin-right: 20px;
   margin-top: 20px;
 }
+
+.passcode_area{
+  margin-top: 50px;
+}
+
+.avatar{
+  height: 80px;
+  width: 80px;
+}
+
+.password_input{
+  margin-right: 8px;
+  margin-left: 8px;
+  border-color: #0E323F;
+}
+
+.password_input:focus {
+  color: #0E323F;
+}
+
+.password_name{
+  margin-bottom: 25px;
+}
+
