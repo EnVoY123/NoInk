@@ -4,7 +4,9 @@
 MyApp.angular.controller('TransactionsPageController', ['$scope', '$http', 'InitService', 'SharedScopes', function ($scope, $http, InitService, SharedScopes) {
   'use strict';
   SharedScopes.setScope('TransactionsPageController', $scope);
-  $scope.transactions = getTransaction()
+  $scope.getTransactions = function(id){
+    $scope.transactions = fetchTransaction(id)
+  }
   $scope.fetchReceipt = function(card_id, id){
     $scope.receipt = getReceipt(card_id, id)
     SharedScopes.getScope('GeneralController').fetchReceiptData();
@@ -21,10 +23,10 @@ MyApp.angular.controller('TransactionsPageController', ['$scope', '$http', 'Init
     // MyApp.fw7.app
   });
 
-  function getTransaction() {
+  function fetchTransaction(id) {
     var transactions = []
     $.ajaxSetup({async: false});
-    $.getJSON("http://85.188.14.184:4000/api/cards/3/transactions.json", function(data){
+    $.getJSON("http://85.188.14.184:4000/api/cards/" + id + "/transactions.json", function(data){
       transactions = data;
     });
     return transactions

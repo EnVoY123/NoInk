@@ -35,6 +35,7 @@
     <script type="text/javascript" src="js/passcode.js"></script>
     <script type="text/javascript" src="js/service/SharedScopes.js"></script>
     <script type="text/javascript" src="js/popup.js"></script>
+    <script type="text/javascript" src="js/receipt_image.js"></script>
 
 
       <!-- Latest compiled and minified CSS -->
@@ -113,13 +114,13 @@
             <div class="page-content center">
               <div class="text-center passcode_area">
                 <img src="./images/passcodes/avatar_circle.png" class="avatar"/>
-                <h4 class="password_name">Kasimir Kaitue</h4>
+                <h4 class="password_name">FirstName LastName</h4>
                 <p class="password_input_label">Type Your Password<p>
-                <form>
-                  <input type="text" pattern="\d*" maxlength="1" class="password_input" onKeyUp="nextField(this, 'n2', 1)" class="passcode_input"></input>
-                  <input type="text" name="n2" pattern="\d*" maxlength="1" class="password_input" onKeyUp="nextField(this, 'n3', 1)" class="passcode_input"></input>
-                  <input type="text" name="n3" pattern="\d*" maxlength="1" class="password_input" onKeyUp="nextField(this, 'n4', 1)" class="passcode_input"></input>
-                  <input type="text" name="n4" pattern="\d*" maxlength="1" class="password_input"  onKeyUp="nextPage(this)" class="passcode_input"></input>
+                <form name="passcode">
+                  <input type="text" name="n1" pattern="\d*" maxlength="1" class="password_input" onkeypress="document.passcode.n1.value='*'" onKeyUp="nextField(this, 'n2', 1)" class="passcode_input"></input>
+                  <input type="text" name="n2" pattern="\d*" maxlength="1" class="password_input" onkeypress="document.passcode.n2.value='*'" onKeyUp="nextField(this, 'n3', 1)" class="passcode_input"></input>
+                  <input type="text" name="n3" pattern="\d*" maxlength="1" class="password_input" onkeypress="document.passcode.n3.value='*'" onKeyUp="nextField(this, 'n4', 1)" class="passcode_input"></input>
+                  <input type="text" name="n4" pattern="\d*" maxlength="1" class="password_input" onkeypress="document.passcode.n4.value='*'" onKeyUp="nextPage(this)" class="passcode_input"></input>
                 </form>
               </div>
               <div class="text-right passcode_next_btn">
@@ -213,7 +214,7 @@
                         </div>
                         
                         <div class="footer-button-right">
-                            <a class="right-position" href="#defaultPage"><input type="button" class="btn btn-yes" value="OK" /> </a>
+                            <a class="right-position" href="#defaultPage"><input type="button" class="btn btn-yes" value="OK" onClick="extinguishImg()" /> </a>
                         </div>
                     </div>
                  </div>
@@ -223,8 +224,8 @@
                 <!-- Page content-->
                  <div class="page-content">
                         <div class="card_list text-center">
-                            <a href="#payPage" class="credit_card"> <img ng-class="" src="images/cards/1453186886483.jpg" /> </a>
-                            <a href="#payPage" class="credit_card"> <img ng-class="" src="images/cards/contactless-card.png" /> </a>
+                            <a href="#payPage" class="credit_card"> <img ng-class="" ngclick="getTransactions(3)" src="images/cards/1453186886483.jpg" /> </a>
+                            <a href="#payPage" class="credit_card"> <img ng-class="" ngclick="getTransactions(4)" src="images/cards/contactless-card.png" /> </a>
                         </div>
                  </div>
             </div>
@@ -233,7 +234,7 @@
               <div class="page-content">
                 <div class="list-block media-list">
                   <div class="sort_popup">
-                    <p><a href="#" data-popup=".popup-about" class="open-popup popup-btn_sort"><i class="fa fa-bars fa-3x" aria-hidden="true"></i></a></p>
+                    <p><a href="#" data-popup=".popup-about" class="open-popup popup-btn_sort"><i class="fa fa-bars fa-2x" aria-hidden="true"></i></a></p>
                   </div>
                   <ul>
                     <li ng-repeat="transaction in transactions">
