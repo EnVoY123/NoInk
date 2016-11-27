@@ -134,8 +134,12 @@
             <!-- Page content-->
             <div class="page-content" ng-model="card">
                 <div class="card_list text-center">
-                  <a href="#transactionsPage" class="credit_card"> <img src="images/cards/1453186886483.jpg" /> </a>
+                  <a href="#transactionsPage" class="credit_card is-selected"> <img src="images/cards/1453186886483.jpg" /> </a>
                   <a href="#transactionsPage" class="credit_card"> <img  src="images/cards/contactless-card.png" /> </a>
+                    <br />
+                    <br />
+                    <br />
+                    <i class="fa fa-plus-square-o fa-4x with-margin" aria-hidden="true"></i>
                 </div>
             </div>
           </div>
@@ -201,7 +205,7 @@
             <div data-page="receiptPage" class="page cached" ng-controller="GeneralController">
                 <!-- Page content-->
                 <div id="content" class="page-content">
-                  <!--<i class="fa fa-ellipsis-h fa-3x navy-color text-right top-button" aria-hidden="true"></i>-->
+                 <i class="fa fa-ellipsis-h fa-3x navy-color text-right top-button" ng-click="" aria-hidden="true"></i>
                     <div class="text-center " id="receipt_image_area">
                     </div>
                     <div id="footer" >
@@ -230,7 +234,7 @@
               <div class="page-content">
                 <div class="list-block media-list">
                   <div class="sort_popup">
-                    <p><a href="#" data-popup=".popup-about" class="open-popup popup-btn_sort"> Sort Your Transactions</a></p>
+                    <p><a href="#" data-popup=".popup-about" class="open-popup popup-btn_sort"><i class="fa fa-bars fa-2x" aria-hidden="true"></i></a></p>
                   </div>
                   <ul>
                     <li ng-repeat="transaction in transactions">
