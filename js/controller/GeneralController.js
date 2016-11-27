@@ -8,7 +8,7 @@ MyApp.angular.controller('GeneralController', ['$scope', '$http', 'InitService',
   SharedScopes.setScope('GeneralController', $scope);
   $scope.fetchReceiptData = function(){
       $scope.receipt = SharedScopes.getScope("TransactionsPageController").receipt
-      $("#receipt_image_area").append("<img  class='receipt_image' src=" + $scope.receipt + " />" )
+      $("#receipt_image_area").append("<img id='receipt_image_id' class='receipt_image' src=" + $scope.receipt + " />" )
   }
   InitService.addEventListener('ready', function () {
     // DOM ready
